@@ -7,8 +7,8 @@ terraform {
 }
 provider "yandex" {
   token = "${var.yc_token}"
-  cloud_id  = "b1ggel59310trksk1fu4"
-  folder_id = "b1g9oing6niujio3j61t"
+  cloud_id  = "CLOUD_ID"
+  folder_id = "FOLDER_ID"
   zone      = "ru-central1-a"
 }
 data "template_file" "metadata" {
@@ -16,8 +16,8 @@ data "template_file" "metadata" {
 }
 resource "yandex_compute_instance_group" "ig-1" {
   name               = "fixed-ig-with-balancer"
-  folder_id          = "b1g9oing6niujio3j61t"
-  service_account_id = "ajer9g2i8khs2tjf74b7"
+  folder_id          = "FOLDER_ID"
+  service_account_id = "SERVICE_ACCOUNT_ID"
   instance_template {
     platform_id = "standard-v3"
     resources {
